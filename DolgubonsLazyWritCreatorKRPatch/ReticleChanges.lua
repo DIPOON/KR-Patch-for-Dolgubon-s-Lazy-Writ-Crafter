@@ -56,8 +56,8 @@ if EsoKR and EsoKR:isKorean() then
 end
 
 
-local oldInteract = FISHING_MANAGER.StartInteraction
-FISHING_MANAGER.StartInteraction = function(...)
+local oldInteract = INTERACTIVE_WHEEL_MANAGER.StartInteraction
+INTERACTIVE_WHEEL_MANAGER.StartInteraction = function(...)
 	if WritCreater:GetSettings().stealProtection then
 		local _, hasWrits = WritCreater.writSearch()
 		if not hasWrits then
