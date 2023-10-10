@@ -1,0 +1,9 @@
+﻿## Title: KR Patch for Dolgubon's Lazy Writ Crafter
+## Description: KR Patch for Dolgubon's Lazy Writ Crafter
+## APIVersion: 100026
+## Author: @Whya5448
+## Version: 1.0.0
+## DependsOn: DolgubonsLazyWritCreator EsoKR
+
+DolgubonsLazyWritCreatorKRPatch.lua
+ReticleChanges.lua
