@@ -71,7 +71,7 @@ if EsoKR and EsoKR:isKorean() then
 			[CRAFTING_TYPE_PROVISIONING] = EsoKR:E("요리사"),
 			[CRAFTING_TYPE_WOODWORKING] = EsoKR:E("목세공사"),
 			[CRAFTING_TYPE_ALCHEMY] = EsoKR:E("연금술사"),
-			[CRAFTING_TYPE_JEWELRYCRAFTING] = "Jewelry",
+			[CRAFTING_TYPE_JEWELRYCRAFTING] = EsoKR:E("장신구"),
 		}
 		return names
 	end
@@ -115,17 +115,17 @@ if EsoKR and EsoKR:isKorean() then
 				["pieces"] = --exact!!
 				{
 					[1] = EsoKR:E("로브"), -- "robe",
-					[2] = EsoKR:E("셔츠"), -- "jerkin",
+					[2] = EsoKR:E("조끼"), -- "jerkin",
 					[3] = EsoKR:E("신발"), -- "shoes",
 					[4] = EsoKR:E("장갑"), -- "gloves",
 					[5] = EsoKR:E("모자"), -- "hat",
 					[6] = EsoKR:E("바지"), -- "breeches",
 					[7] = EsoKR:E("어깨장식"), -- "epaulet",
 					[8] = EsoKR:E("허리띠"), -- "sash",
-					[9] = EsoKR:E("경갑"), -- "jack",
-					[10]= EsoKR:E("부츠"), -- "boots",
+					[9] = EsoKR:E("가죽 갑옷"), -- "jack",
+					[10]= EsoKR:E("장화"), -- "boots",
 					[11]= EsoKR:E("팔목보호대"), -- "bracers",
-					[12]= EsoKR:E("투구"), -- "helmet",
+					[12]= EsoKR:E("머리보호대"), -- "helmet",
 					[13]= EsoKR:E("다리보호대"), -- "guards",
 					[14]= EsoKR:E("어깨보호대"), -- "cops",
 					[15]= EsoKR:E("벨트"), -- "belt",
@@ -133,7 +133,7 @@ if EsoKR and EsoKR:isKorean() then
 				["match"] = --exact!!! This is not the material, but rather the prefix the material gives to equipment. e.g. Homespun Robe, Linen Robe
 				{
 					[1] = EsoKR:E("수제"), -- "Homespun", --lvtier one of mats
-					[2] = EsoKR:E("아마포"), -- "Linen",	--l
+					[2] = EsoKR:E("아마포"), -- "Linen",	
 					[3] = EsoKR:E("면포"), -- "Cotton",
 					[4] = EsoKR:E("거미 비단"), -- "Spidersilk",
 					[5] = EsoKR:E("에본실"), -- "Ebonthread",
@@ -143,11 +143,11 @@ if EsoKR and EsoKR:isKorean() then
 					[9] = EsoKR:E("그림자 천"), -- "Shadowspun",
 					[10]= EsoKR:E("선조"), -- "Ancestor",
 					[11]= EsoKR:E("생가죽"), -- "Rawhide",
-					[12]= "Hide", -- "Hide",
-					[13]= "Leather", -- "Leather",
-					[14]= "Full-Leather", -- "Full-Leather",
-					[15]= "Fell", -- "Fell",
-					[16]= "Brigandine", -- "Brigandine",
+					[12]= EsoKR:E("가죽"), -- "Hide",
+					[13]= EsoKR:E("가공 가죽"), -- "Leather",
+					[14]= EsoKR:E("그레인"), -- "Full-Leather",
+					[15]= EsoKR:E("모피"), -- "Fell",
+					[16]= EsoKR:E("브리간딘"), -- "Brigandine",
 					[17]= EsoKR:E("철 가죽"), -- "Ironhide",
 					[18]= EsoKR:E("최상급"), -- "Superb",
 					[19]= EsoKR:E("그림자가죽"), -- "Shadowhide",
@@ -167,18 +167,18 @@ if EsoKR and EsoKR:isKorean() then
 					[6] = EsoKR:E("대검"), -- "greatsword",
 					[7] = EsoKR:E("단검"), -- "dagger",
 					[8] = EsoKR:E("흉갑"), -- "cuirass",
-					[9] = EsoKR:E("구두"), -- "sabatons",
+					[9] = EsoKR:E("쇠구두"), -- "sabatons",
 					[10] = EsoKR:E("건틀렛"), -- "gauntlets",
-					[11] = EsoKR:E("헬름"), -- "helm",
-					[12] = EsoKR:E("각반"), -- "greaves",
+					[11] = EsoKR:E("투구"), -- "helm",
+					[12] = EsoKR:E("각갑"), -- "greaves",
 					[13] = EsoKR:E("견갑"), -- "pauldron",
-					[14] = EsoKR:E("거들"), -- "girdle",
+					[14] = EsoKR:E("복대"), -- "girdle",
 				},
 				["match"] = --exact!!! This is not the material, but rather the prefix the material gives to equipment. e.g. Iron Axe, Steel Axe
 				{
 					[1] = EsoKR:E("철"), -- "Iron",
-					[2] = "Steel", -- "Steel",
-					[3] = EsoKR:E("오리할콘"), -- "Orichalc",
+					[2] = EsoKR:E("강철"), -- "Steel",
+					[3] = EsoKR:E("오리할쿰"), -- "Orichalc",
 					[4] = EsoKR:E("드워븐"), -- "Dwarven",
 					[5] = EsoKR:E("에보니"), -- "Ebon",
 					[6] = EsoKR:E("칼시니움"), -- "Calcinium",
@@ -210,7 +210,7 @@ if EsoKR and EsoKR:isKorean() then
 					[6] = EsoKR:E("자작나무"), -- "Birch",
 					[7] = EsoKR:E("물푸레나무"), -- "Ash",
 					[8] = EsoKR:E("마호가니"), -- "Mahogany",
-					[9] = EsoKR:E("나이트우드"), -- "Nightwood",
+					[9] = EsoKR:E("깊은밤나무"), -- "Nightwood",
 					[10] = EsoKR:E("루비"), -- "Ruby",
 				},
 
@@ -219,17 +219,17 @@ if EsoKR and EsoKR:isKorean() then
 			{
 				["pieces"] = --Exact!!!
 				{
-					[1] = "ring", -- "ring",
-					[2] = "necklace", -- "necklace",
+					[1] = EsoKR:E("반지"), -- "ring",
+					[2] = EsoKR:E("목걸이"), -- "necklace",
 
 				},
 				["match"] = --exact!!! This is not the material, but rather the prefix the material gives to equipment. e.g. Maple Bow. Oak Bow.
 				{
-					[1] = "Pewter", -- "Pewter", -- 1
-					[2] = "Copper", -- "Copper", -- 26
-					[3] = "Silver", -- "Silver", -- CP10
-					[4] = "Electrum", -- "Electrum", --CP80
-					[5] = "Platinum", -- "Platinum", -- CP150
+					[1] = EsoKR:E("백랍"), -- "Pewter", -- 1
+					[2] = EsoKR:E("구리"), -- "Copper", -- 26
+					[3] = EsoKR:E("은"), -- "Silver", -- CP10
+					[4] = EsoKR:E("호박금"), -- "Electrum", --CP80
+					[5] = EsoKR:E("백금"), -- "Platinum", -- CP150
 				},
 
 			},
@@ -263,9 +263,9 @@ if EsoKR and EsoKR:isKorean() then
 					{EsoKR:E("체력 재생"),45834,1},
 					{EsoKR:E("체력 감소"),45834,2},
 					{EsoKR:E("쇠약"),45843,2},
-					{EsoKR:E("무기 피해량"),45843,1},
-					{EsoKR:E("포션 강화"),45846,1},
-					{EsoKR:E("포션 속도 상승"),45846,2},
+					{EsoKR:E("무기 피해"),45843,1},
+					{EsoKR:E("물약 강화"),45846,1},
+					{EsoKR:E("물약 속도 상승"),45846,2},
 					{EsoKR:E("화염 저항"),45838,2},
 					{EsoKR:E("화염"),45838,1},
 					{EsoKR:E("물리 피해 감소"), 45847,2},
@@ -290,17 +290,17 @@ if EsoKR and EsoKR:isKorean() then
 					[12]= {EsoKR:E("강대한"),45814}, -- grand
 					[13]= {EsoKR:E("탁월한"),45815}, -- splendid
 					[14]= {EsoKR:E("기념적인"),45816}, -- monumental
-					[15]= {EsoKR:E("초월"),{68341,68340,},}, -- truly
-					[16]= {EsoKR:E("우월한"),{64509,64508,},},
+					[15]= {EsoKR:E("초월적인"),{68341,68340,},}, -- truly 160
+					[16]= {EsoKR:E("최상급"),{64509,64508,},}, -- superb 150
 
 				},
 				["quality"] =
 				{
-					{"normal",45850}, -- normal
+					{EsoKR:E("기본적인"),45850}, -- normal
 					{EsoKR:E("좋은"),45851}, -- fine
 					{EsoKR:E("우수한"),45852}, -- superior
-					{EsoKR:E("에픽"),45853}, -- epic
-					{EsoKR:E("전설"),45854}, -- legendary
+					{EsoKR:E("유물의"),45853}, -- epic
+					{EsoKR:E("전설적인"),45854}, -- legendary
 					{"", 45850} -- default, if nothing is mentioned. Default should be Ta.
 				}
 			},
@@ -311,7 +311,7 @@ if EsoKR and EsoKR:isKorean() then
 	end
 
 	function WritCreater.masterWritQuality() -- Vital . This is probably not necessary, but it stays for now because it works
-		return {{EsoKR:E("에픽"),4},{EsoKR:E("전설"),5}}
+		return {{EsoKR:E("유물의"),4},{EsoKR:E("전설적인"),5}}
 	end
 
 	function WritCreater.langEssenceNames() -- Vital
@@ -424,7 +424,7 @@ if EsoKR and EsoKR:isKorean() then
 	function WritCreater.langStationNames()
 		return
 		{[EsoKR:E("대장기술 제작대")] = 1, [EsoKR:E("재봉 제작대")] = 2,
-		 [EsoKR:E("마법부여 제작대")] = 3,[EsoKR:E("연금술 제작대")] = 4, [EsoKR:E("요리용 화로")] = 5, [EsoKR:E("목공 제작대")] = 6, ["Jewelry Crafting Station"] = 7, }
+		 [EsoKR:E("마법부여 제작대")] = 3,[EsoKR:E("연금술 제작대")] = 4, [EsoKR:E("요리용 화로")] = 5, [EsoKR:E("목공 제작대")] = 6, [EsoKR:E("장신구 제작대")] = 7, }
 	end
 
 	function WritCreater.langWritRewardBoxes () return {
@@ -434,7 +434,7 @@ if EsoKR and EsoKR:isKorean() then
 		[CRAFTING_TYPE_BLACKSMITHING] = EsoKR:E("대장장이의 상자"), -- "Blacksmith's Crate",
 		[CRAFTING_TYPE_CLOTHIER] = EsoKR:E("재봉사의 가방"), -- "Clothier's Satchel",
 		[CRAFTING_TYPE_WOODWORKING] = EsoKR:E("목세공사의 상자"), -- "Woodworker's Case",
-		[CRAFTING_TYPE_JEWELRYCRAFTING] = "Jewelry Crafter's Coffer", -- "Jewelry Crafter's Coffer",
+		[CRAFTING_TYPE_JEWELRYCRAFTING] = EsoKR:E("보석 공예가의 상자"), -- "Jewelry Crafter's Coffer",
 		[8] = EsoKR:E("적하물"), -- "Shipment",
 		[10] = "Shipment", -- "Shipment",
 	}
