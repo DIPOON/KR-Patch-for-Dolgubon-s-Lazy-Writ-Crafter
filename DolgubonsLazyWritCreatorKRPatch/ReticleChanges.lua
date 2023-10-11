@@ -1,4 +1,4 @@
-if EsoKR and EsoKR:isKorean() then
+if EsoKR and EsoKR:isKorean() then -- 추가
 	WritCreater = WritCreater or {}
 	function WritCreater.initializeReticleChanges()
 		if not WritCreater.langStationNames then return end
@@ -24,11 +24,11 @@ if EsoKR and EsoKR:isKorean() then
 
 			local original = object[functionName]
 			object[functionName] = function(self, text)
-				-- If the setting is off exit
+			-- If the setting is off exit
 
-				if not WritCreater:GetSettings().changeReticle then  original(self, text) return end
-				text = EsoKR:removeIndex(text)
-
+			if not WritCreater:GetSettings().changeReticle then  original(self, text) return end
+				text = EsoKR:removeIndex(text) -- 추가
+			
 				-- if not a station exit
 				local craftingType = stations[text]
 				if not craftingType then  original(self, text) return end
@@ -53,11 +53,12 @@ if EsoKR and EsoKR:isKorean() then
 
 		setupReplacement(ZO_ReticleContainerInteractContext, "SetText")
 	end
-end
+end --추가
+
+local oldInteract = INTERACTIVE_WHEEL_MANAGER.StartInteraction
 
 
-local oldInteract = FISHING_MANAGER.StartInteraction
-FISHING_MANAGER.StartInteraction = function(...)
+local function hook(...)
 	if WritCreater:GetSettings().stealProtection then
 		local _, hasWrits = WritCreater.writSearch()
 		if not hasWrits then
@@ -68,24 +69,37 @@ FISHING_MANAGER.StartInteraction = function(...)
 			return oldInteract(...)
 		end
 		if isCriminal then
-			d("The Lazy Writ Crafter has saved you from stealing while doing writs!")
-			return isCriminal
+			local isStealthed = GetUnitStealthState("player")
+			if isStealthed == 3 or isStealthed == 5 then
+				return oldInteract(...)
+			else
+				d("The Lazy Writ Crafter has saved you from stealing while doing writs!")
+				return isCriminal
+			end
 		end
 		return oldInteract(...)
 	end
+	return oldInteract(...)
 end
+INTERACTIVE_WHEEL_MANAGER.StartInteraction = hook
+
 
 local jewelryName =zo_strformat("<<1>>",GetItemLinkName("|H1:item:138799:6:1:0:0:0:24:255:5:325:28:0:0:0:0:0:0:0:0:0:4320001|h|h"))
-local original = ZO_Dialogs_ShowDialog 
-ZO_Dialogs_ShowDialog = function(...)
-	
-	local returns = { original(...) }
-	if ZO_Dialog1 and ZO_Dialog1.textParams and ZO_Dialog1.textParams.mainTextParams then
-		local itemName= ZO_Dialog1.textParams.mainTextParams[1]
-		if  WritCreater:GetSettings().EZJewelryDestroy and string.find(itemName ,jewelryName )then
+local function dialogHook(...)
+	zo_callLater(function()
+		if ZO_Dialog1 and ZO_Dialog1.textParams and ZO_Dialog1.textParams.mainTextParams then
+			local itemName= ZO_Dialog1.textParams.mainTextParams[1]
+			if  WritCreater:GetSettings().EZJewelryDestroy and string.find(itemName ,jewelryName )then
+				for k, v in pairs(ZO_Dialog1.textParams.mainTextParams) do
+					if v == string.upper(v) then
+						ZO_Dialog1EditBox:SetText(v)
+						ZO_Dialog1EditBox:LoseFocus()
+					end
+				end
 
-			ZO_Dialog1EditBox:SetText("DESTROY")
+			end
 		end
-	end
-	return unpack(returns)
+	end, 10)
 end
+
+ZO_PreHook("ZO_Dialogs_ShowDialog", dialogHook)
